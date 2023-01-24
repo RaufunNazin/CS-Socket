@@ -96,7 +96,7 @@ public class ATM
                             }
                         } else if (text.contains("#c#")) {
                             while(true) {
-                                if(error.nextInt(100) > 30) {
+                                if(error.nextInt(100) > 98) {
                                     try {
                                         int index = text.lastIndexOf('#');
                                         Scanner sc = new Scanner(db);
