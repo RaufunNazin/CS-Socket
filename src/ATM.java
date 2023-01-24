@@ -10,7 +10,6 @@ class Object {
 }
 public class ATM
 {
-    //initialize socket and input stream
     private Socket socket = null;
     private ServerSocket server = null;
     private DataInputStream in = null;
@@ -125,27 +124,6 @@ public class ATM
                                         break;
                                     } catch (NumberFormatException exception) {
                                         System.out.println(exception);
-                                        boolean flag = true;
-                                        Scanner sc = new Scanner(db);
-                                        while (sc.hasNextLine()) {
-                                            String data = sc.nextLine();
-                                            if (data.equals(text)) {
-                                                out.writeUTF("Already processed");
-                                                sc.close();
-                                                flag = false;
-                                                break;
-                                            }
-                                        }
-
-                                        if (flag) {
-                                            sc.close();
-                                        } else {
-                                            continue;
-                                        }
-
-                                        wr.write(text + '\n');
-                                        wr.close();
-                                        out.writeUTF("Please enter valid amount");
                                     } catch (IOException exception) {
                                         System.out.println("Error");
                                         System.out.println(exception);
@@ -194,28 +172,9 @@ public class ATM
                                             break;
                                         }
                                     } catch (NumberFormatException exception) {
-                                        boolean flag = true;
-                                        Scanner sc = new Scanner(db);
-                                        while (sc.hasNextLine()) {
-                                            String data = sc.nextLine();
-                                            if (data.equals(text)) {
-                                                out.writeUTF("Already processed");
-                                                sc.close();
-                                                flag = false;
-                                                break;
-                                            }
-                                        }
-
-
-                                        if (flag) {
-                                            sc.close();
-                                        } else {
-                                            continue;
-                                        }
-                                        wr.write(text + '\n');
-                                        wr.close();
-                                        out.writeUTF("Please enter valid amount");
+                                        System.out.println(exception);
                                     } catch (IOException exception) {
+                                        System.out.println("Error");
                                         System.out.println(exception);
                                     }
                                 } else {
